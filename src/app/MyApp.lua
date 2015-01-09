@@ -29,7 +29,7 @@ function MyApp:run()
 
     cc.Director:getInstance():getOpenGLView():setDesignResolutionSize(960, 640, 1)
     
-    --create scene 
+--[[    --create scene 
     local scene = require("GameScene")
     local gameScene = scene.create()
 
@@ -37,9 +37,9 @@ function MyApp:run()
         cc.Director:getInstance():replaceScene(gameScene)
     else
         cc.Director:getInstance():runWithScene(gameScene)
-    end
+    end]]
     
-    --self:enterScene("GameScene")
+    self:enterScene("MainScene")
 end
 
 return MyApp

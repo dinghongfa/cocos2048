@@ -1,3 +1,6 @@
+require("app.utils.LabelUtils")
+require("app.utils.VisibleRect")
+require("app.utils.Version")
 local Card = require("app.ui.Card")
 local size --舞台尺寸
 local cardList = {}  --卡片字典
@@ -158,7 +161,7 @@ end
 
 function GameScene:getRandom(maxSize)
     --这里需要这样写一下 才能让随即数每次都不一样
-    math.randomseed(os.time())
+    math.randomseed(tostring(os.time()):reverse():sub(1, 6))
     return math.floor(math.random() * maxSize) % maxSize;
 end
 

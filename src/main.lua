@@ -15,12 +15,12 @@ function __G__TRACKBACK__(errorMessage)
     print("----------------------------------------")
 end
 
---[[package.path = package.path .. ";src/"
+package.path = package.path .. ";src/"
 cc.FileUtils:getInstance():setPopupNotify(false)
-require("app.MyApp").new():run()]]
+require("app.MyApp").new():run()
 
 
-local function main()
+--[[local function main()
     collectgarbage("collect")
     -- avoid memory leak
     collectgarbage("setpause", 100)
@@ -53,4 +53,4 @@ end
 local status, msg = xpcall(main, __G__TRACKBACK__)
 if not status then
     error(msg)
-end
+end]]
